@@ -1,4 +1,4 @@
-const baseUrl = "https://restcountries.com/v3.1/name/peru"
+const baseUrl = "https://restcountries.com/v3.1/all"
 
 const titleComponent = {
     template: `

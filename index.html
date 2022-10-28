@@ -45,7 +45,7 @@
           <tbody>
             <tr v-for="pais in paises">
               <td>{{ pais.translations.por.official }}</td>
-              <td>{{ pais.capital[0] }}</td>
+              <td>{{ pais.capital }}</td>
               <td>{{ pais.flag }}</td>
               <td><a v-bind:href="pais.maps.googleMaps" target="_blank">{{ pais.maps.googleMaps }}</a></td>
             </tr>
