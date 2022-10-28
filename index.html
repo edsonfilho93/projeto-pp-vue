@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lista de Países</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <!-- toast -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+      rel="stylesheet"
+    />
+    <!-- CSS only -->
+  </head>
+  <body>
+    <div id="app" class="container">
+      <div class="d-flex justify-content-center"> <titlecomponent /> </div>
+
+      <div class="row">
+        <h2>Começar a listar os países</h2>
+      </div>
+
+      <div class="row mt-4">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>País</th>
+              <th>Capital</th>
+              <th>Bandeira</th>
+              <th>Google Maps</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr v-for="pais in paises">
+              <td>{{ pais.translations.por.official }}</td>
+              <td>{{ pais.capital[0] }}</td>
+              <td>{{ pais.flag }}</td>
+              <td><a v-bind:href="pais.maps.googleMaps" target="_blank">{{ pais.maps.googleMaps }}</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- Para requests -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="vueApp.js"></script>
+  </body>
+</html>
